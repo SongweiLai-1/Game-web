@@ -1,22 +1,30 @@
 import react from 'react'
 import { Grid, GridItem , Show } from '@chakra-ui/react'
 import NavBar from './components/NavBar'
+import DarkMode from "./components/DarkMode";
+import GameGrid from "./services/GameGrid";
 
 function App() {
 
   return (
-
+<>
         <Grid templateAreas={{
             base: `"nav" "main"`,
             lg:`"nav nav" "aside main"`
             }}>
 
-            <GridItem  bg='coral' area="nav">Nav</GridItem>
+            <GridItem   area="nav">
+                <NavBar/>
+            </GridItem>
             <Show above="lg">
-                <GridItem  bg='dodgerblue' area="aside">Aside</GridItem>
+            <GridItem area="aside" >
+                Aside
+            </GridItem>
             </Show>
-            <GridItem  bg='gold' area="main">Main</GridItem>
+            <GridItem area="main" >
+                <GameGrid/>
+            </GridItem>
         </Grid>
-
+</>
   )}
 export default App
