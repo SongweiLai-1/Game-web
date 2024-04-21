@@ -4,8 +4,10 @@ import {Card, CardBody, Heading, HStack, Img, Text} from "@chakra-ui/react";
 import PlatformIconList from "./PlatformIconList"
 import CriticScore from "../components/CriticScore";
 import getCroppedImageUrl from "../services/getCroppedImageUrl";
+
 interface Props {
-    game: Game }
+    game: Game
+}
 
 
 
