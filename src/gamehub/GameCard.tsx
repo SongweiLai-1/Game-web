@@ -6,10 +6,7 @@ import CriticScore from "../components/CriticScore";
 import getCroppedImageUrl from "../services/getCroppedImageUrl";
 
 interface Props {
-    game: Game
-}
-
-
+    game: Game }
 
 const GameCard = ({game}: Props) => {
     return (
