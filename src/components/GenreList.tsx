@@ -10,10 +10,10 @@ interface Props {
 
 const GenreList = ({onSelectGenre,selectedGenre}: Props) => {
 
-    const {data} = useGenres()
+    const {data, isLoading, error} = useGenres()
 
-    if (data.error) return null
-    if (data.isLoading) return <Spinner />
+    if (error) return null
+    if (isLoading) return <Spinner />
     return (
         <List>
             {data.map(genre => (
