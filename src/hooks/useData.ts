@@ -10,7 +10,7 @@ interface FetchResponse<T> {
 const useData= <T>(endpoint:string, requestConfig?: AxiosRequestConfig, deps?:any[]) => {
 
     const [data,setData] = useState<T[]>([])
-    const [error, setError] =useState('')
+    const [error, setError] =useState("")
     const [isLoading, setLoading] = useState(false)
 
     useEffect(()=>{

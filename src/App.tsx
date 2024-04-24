@@ -8,11 +8,14 @@ import PlatformSelector from "./components/PlatformSelector"
 import {Platform} from "./hooks/usePlatform";
 import SortSelector from "./components/SortSelector";
 import SearchInpute from  "./components/SearchInpute"
+import GameHeading from "./components/GameHeading";
 
 export interface GameQuery {
     genre: Genre | null
     platform: Platform | null
-    sortOrder: string }
+    sortOrder: string
+    searchText: string
+}
 
 function App() {
     const [gameQuary,setGameQuary] = useState<GameQuery>({} as GameQuery)
@@ -21,7 +24,7 @@ function App() {
         base: `"nav" "main"`,
         lg:`"nav nav" "aside main"`}}>
         <GridItem area="nav">
-            <NavBar/>
+            <NavBar onSearch={(searchText) => setGameQuary({...gameQuary,searchText})}/>
         </GridItem>
         <Show above="lg">
             <GridItem area="aside" paddingX={5} >
@@ -31,6 +34,7 @@ function App() {
             </GridItem>
         </Show>
         <GridItem area="main" >
+            <GameHeading gameQuery={gameQuary}/>
             <HStack spacing={5} paddingLeft={2} marginBottom={5}>
                 <PlatformSelector
                     selectPlatform={gameQuary.platform}
