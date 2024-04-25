@@ -1,4 +1,4 @@
-import react, {useState} from 'react';
+import  {useState} from 'react';
 import {Grid, GridItem, HStack, Show} from '@chakra-ui/react';
 import NavBar from './components/NavBar';
 import GameGrid from "./gamehub/GameGrid";
@@ -7,7 +7,6 @@ import {Genre} from "./hooks/useGenres";
 import PlatformSelector from "./components/PlatformSelector"
 import {Platform} from "./hooks/usePlatform";
 import SortSelector from "./components/SortSelector";
-import SearchInpute from  "./components/SearchInpute"
 import GameHeading from "./components/GameHeading";
 
 export interface GameQuery {
