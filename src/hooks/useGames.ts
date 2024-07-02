@@ -1,5 +1,6 @@
 import useData from "./useData";
 import {GameQuery} from "../App";
+
 export interface Platform {
     id: number
     name:string
@@ -15,15 +16,11 @@ export interface Game {
     rating: number;
     rating_top: number;
 
-
 }
 
-interface FetchGamesResponse {
-    count: number;
-    result: Game[]
-}
 
 const useGames= (gameQuery: GameQuery) =>
+
         useData<Game>(
             '/games',
             {

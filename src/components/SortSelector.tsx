@@ -28,7 +28,7 @@ const SortSelector =  ({onSelectSortOrder,sortOrder}: Props) => {
             <MenuButton as={Button} rightIcon={<BsChevronDown/>}>
                 Order by : {currentLabel?.label ||'Relevance'}</MenuButton>
             <MenuList >
-                {sortOrders.map((order) =>
+                {sortOrders?.map((order) =>
                     <MenuItem onClick={() => onSelectSortOrder(order.value)}
                               key={order.value}>{order.label}</MenuItem>)}
             </MenuList>
