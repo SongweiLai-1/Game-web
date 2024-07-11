@@ -1,4 +1,3 @@
-import {FetchResponse} from "../services/api-client";
 import {useQuery} from "@tanstack/react-query";
 import APIClient from "../services/api-client";
 import generes from "../data/genres";
