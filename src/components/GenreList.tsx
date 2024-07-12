@@ -5,15 +5,17 @@ import getCroppedImageUrl from "../services/getCroppedImageUrl";
 
 interface Props {
     onSelectGenre: (genre: Genre) =>void;
-    selectedGenre: Genre | null;
+    selectedGenreId?: number;
 }
 
-const GenreList = ({onSelectGenre,selectedGenre}: Props) => {
+const GenreList = ({
+        selectedGenreId,
+        onSelectGenre
+        }: Props) => {
 
     const {data, isLoading, error} = useGenres()
 
     if (error) return null
-
     if (isLoading) return <Spinner />
 
     return (
@@ -31,7 +33,11 @@ const GenreList = ({onSelectGenre,selectedGenre}: Props) => {
                         objectFit = 'cover'
                         src={getCroppedImageUrl(genre.image_background)}/>
                     <Button
-                        fontWeight={genre.id === selectedGenre?.id ? "bold" : "normal"}
+                        fontWeight={
+                            genre.id === selectedGenreId
+                                ? "bold"
+                                : "normal"
+                            }
                         whiteSpace={'normal'}
                         textAlign = 'left'
                         key={genre.id}

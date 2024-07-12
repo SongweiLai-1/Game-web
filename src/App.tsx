@@ -10,8 +10,8 @@ import SortSelector from "./components/SortSelector";
 import GameHeading from "./components/GameHeading";
 
 export interface GameQuery {
-    genre: Genre | null
-    platform: Platform | null
+    genreId?: number;
+    platformId?: number;
     sortOrder: string
     searchText: string
 }
@@ -29,16 +29,20 @@ function App() {
         <Show above="lg">
             <GridItem area="aside" paddingX={5} >
             <GenreList
-                selectedGenre={gameQuary.genre}
-                onSelectGenre={(genre) => setGameQuary({...gameQuary,genre})}/>
+                selectedGenreId={gameQuary.genreId}
+                onSelectGenre={(genre) =>
+                    setGameQuary({...gameQuary,genreId: genre.id})}/>
             </GridItem>
         </Show>
         <GridItem area="main" >
             <GameHeading gameQuery={gameQuary}/>
             <HStack spacing={5} paddingLeft={2} marginBottom={5}>
                 <PlatformSelector
-                    selectPlatform={gameQuary.platform}
-                    onSelectPlatform={(platform) => setGameQuary({...gameQuary,platform})} />
+                    selectedPlatformId={gameQuary.platformId}
+                    onSelectPlatform={(platform) =>
+                        setGameQuary({
+                            ...gameQuary,
+                            platformId: platform.id})} />
                 <SortSelector
                     sortOrder={gameQuary.sortOrder}
                     onSelectSortOrder={(sortOrder) => setGameQuary({...gameQuary,sortOrder})}/>
