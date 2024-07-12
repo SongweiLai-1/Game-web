@@ -1,4 +1,3 @@
-import react from "react";
 import meh from "../assets/bulls-eye.webp"
 import bullsEye from "../assets/bulls-eye.webp"
 import thumbsUp from "../assets/thumbs-up.webp"

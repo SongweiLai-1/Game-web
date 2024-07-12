@@ -1,5 +1,5 @@
 import React from "react";
-import {Platform} from "../hooks/usePlatform";
+import {Platform} from "../hooks/usePlatforms";
 import {Text, Icon, HStack, IconProps} from "@chakra-ui/react";
 import { FaWindows,FaXbox,FaPlaystation,FaLinux,FaApple,FaAndroid} from "react-icons/fa";
 import { MdPhoneIphone } from "react-icons/md";
